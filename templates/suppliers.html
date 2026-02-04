@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+  <h2>Add Supplier</h2>
+  <form method="post" class="form-grid">
+    <label>
+      Supplier name
+      <input type="text" name="name" required />
+    </label>
+    <label>
+      Phone
+      <input type="text" name="phone" />
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" />
+    </label>
+    <button type="submit">Add Supplier</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Link Supplier to Product</h2>
+  <form method="post" action="{{ url_for('link_supplier') }}" class="form-grid">
+    <label>
+      Supplier
+      <select name="supplier_id" required>
+        {% for supplier in suppliers %}
+          <option value="{{ supplier.id }}">{{ supplier.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      Product
+      <select name="product_id" required>
+        {% for product in products %}
+          <option value="{{ product.id }}">{{ product.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <button type="submit">Link</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Suppliers</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Products Supplied</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for supplier in suppliers %}
+        <tr>
+          <td>{{ supplier.name }}</td>
+          <td>{{ supplier.phone or '-' }}</td>
+          <td>{{ supplier.email or '-' }}</td>
+          <td>
+            {% if supplier.products %}
+              {{ supplier.products | map(attribute='name') | join(', ') }}
+            {% else %}
+              None
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+  <h2>Record Sale</h2>
+  <form method="post" class="form-grid">
+    <label>
+      Product
+      <select name="product_id" required>
+        {% for product in products %}
+          <option value="{{ product.id }}">{{ product.name }} ({{ product.quantity }} in stock)</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      Quantity
+      <input type="number" name="quantity" min="1" required />
+    </label>
+    <button type="submit">Record Sale</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Recent Sales</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sale in sales %}
+        <tr>
+          <td>{{ sale.product.name }}</td>
+          <td>{{ sale.quantity }}</td>
+          <td>${{ "%.2f" | format(sale.total_price) }}</td>
+          <td>{{ sale.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

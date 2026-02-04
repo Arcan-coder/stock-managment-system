@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="dashboard-grid">
+  <div class="card">
+    <h3>Total Products</h3>
+    <p class="metric">{{ total_products }}</p>
+  </div>
+  <div class="card">
+    <h3>Low Stock Items</h3>
+    <p class="metric">{{ low_stock_items | length }}</p>
+  </div>
+  <div class="card">
+    <h3>Today's Sales</h3>
+    <p class="metric">${{ "%.2f" | format(today_sales_total) }}</p>
+  </div>
+  <div class="card">
+    <h3>Current Date & Time</h3>
+    <p class="metric" id="current-datetime"></p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Low Stock Alerts</h2>
+  {% if low_stock_items %}
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Threshold</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in low_stock_items %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.low_stock_threshold }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No low stock items today.</p>
+  {% endif %}
+</section>
+
+<script>
+  const dateElement = document.getElementById('current-datetime');
+  const updateTime = () => {
+    const now = new Date();
+    dateElement.textContent = now.toLocaleString();
+  };
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
+{% endblock %}
