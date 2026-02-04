@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero card">
+  <div>
+    <span class="pill">MVP Overview</span>
+    <h2>Welcome back! Here's your inventory pulse.</h2>
+    <p>Track stock, suppliers, and sales performance with automated reports delivered on schedule.</p>
+    <div class="button-row">
+      <a class="button-link ghost" href="{{ url_for('products') }}">Add Products</a>
+      <a class="button-link" href="{{ url_for('preview_report', period='daily') }}">Preview Daily Report</a>
+    </div>
+  </div>
+  <div class="hero-illustration" aria-hidden="true">
+    <svg viewBox="0 0 220 180" role="img" aria-label="Inventory illustration">
+      <defs>
+        <linearGradient id="boxGradient" x1="0" x2="1">
+          <stop offset="0%" stop-color="#93c5fd" />
+          <stop offset="100%" stop-color="#2563eb" />
+        </linearGradient>
+      </defs>
+      <rect x="10" y="30" width="200" height="130" rx="16" fill="#e2e8f0"/>
+      <rect x="30" y="55" width="70" height="85" rx="12" fill="url(#boxGradient)" />
+      <rect x="120" y="55" width="70" height="40" rx="10" fill="#38bdf8" />
+      <rect x="120" y="100" width="70" height="40" rx="10" fill="#0ea5e9" />
+      <circle cx="55" cy="78" r="8" fill="#dbeafe" />
+      <circle cx="145" cy="75" r="6" fill="#e0f2fe" />
+      <circle cx="145" cy="120" r="6" fill="#bae6fd" />
+    </svg>
+  </div>
+</section>
+
+<section class="dashboard-grid">
+  <div class="card">
+    <h3>Total Products</h3>
+    <p class="metric">{{ total_products }}</p>
+  </div>
+  <div class="card">
+    <h3>Low Stock Items</h3>
+    <p class="metric">{{ low_stock_items | length }}</p>
+  </div>
+  <div class="card">
+    <h3>Today's Sales</h3>
+    <p class="metric">${{ "%.2f" | format(today_sales_total) }}</p>
+  </div>
+  <div class="card">
+    <h3>Current Date & Time</h3>
+    <p class="metric" id="current-datetime"></p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Low Stock Alerts</h2>
+  {% if low_stock_items %}
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Threshold</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in low_stock_items %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.low_stock_threshold }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No low stock items today.</p>
+  {% endif %}
+</section>
+
+<script>
+  const dateElement = document.getElementById('current-datetime');
+  const updateTime = () => {
+    const now = new Date();
+    dateElement.textContent = now.toLocaleString();
+  };
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
+{% endblock %}
