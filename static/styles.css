@@ -1,22 +1,65 @@
 :root {
   color-scheme: light;
   font-family: "Inter", "Segoe UI", sans-serif;
-  background-color: #f5f7fb;
-  color: #1f2933;
+  background-color: #f4f6fb;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: #f5f7fb;
+  background: radial-gradient(circle at top, rgba(99, 102, 241, 0.15), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.2), transparent 40%),
+    #f4f6fb;
+  min-height: 100vh;
 }
 
 .top-nav {
-  background: #0f172a;
+  background: linear-gradient(130deg, #0f172a 0%, #1e293b 50%, #312e81 100%);
   color: #f8fafc;
-  padding: 1.5rem 2rem;
+  padding: 1.75rem 2.5rem;
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-nav::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 60%);
+  opacity: 0.7;
+  animation: float 6s ease-in-out infinite;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
   gap: 1rem;
+}
+
+.brand-mark {
+  width: 56px;
+  height: 56px;
+  padding: 0.6rem;
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.1);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
+  animation: pulse 5s ease-in-out infinite;
+}
+
+.brand-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .top-nav h1 {
@@ -39,20 +82,47 @@ body {
   color: #e2e8f0;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.top-nav a:hover {
+  color: #38bdf8;
 }
 
 .container {
-  padding: 2rem;
-  max-width: 1100px;
+  padding: 2.5rem;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-  margin-bottom: 1.5rem;
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  margin-bottom: 1.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(56, 189, 248, 0.08), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.12);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .dashboard-grid {
@@ -62,9 +132,10 @@ body {
 }
 
 .metric {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin: 0.5rem 0 0;
+  color: #1d4ed8;
 }
 
 .form-grid {
@@ -84,22 +155,39 @@ body {
 input,
 select,
 button {
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
   border: 1px solid #cbd5f5;
   font-size: 1rem;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
 button,
 .button-link {
-  background: #2563eb;
+  background: linear-gradient(120deg, #2563eb, #6366f1);
   color: #fff;
   border: none;
   cursor: pointer;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  padding: 0.65rem 1.1rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+.button-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(37, 99, 235, 0.35);
 }
 
 .button-row {
@@ -138,6 +226,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  background: #ffffff;
 }
 
 table th,
@@ -148,7 +237,7 @@ table td {
 }
 
 .warning {
-  background: #fef3c7;
+  background: #fef9c3;
 }
 
 .login-card ul {
@@ -161,12 +250,32 @@ table td {
   color: #475569;
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 @media (max-width: 768px) {
   .top-nav {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 
   .container {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 }
