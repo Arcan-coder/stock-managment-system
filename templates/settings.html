@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+  <h2>Admin Contact Settings</h2>
+  <form method="post" class="form-grid">
+    <label>
+      Admin email
+      <input type="email" name="admin_email" value="{{ setting.admin_email if setting else '' }}" required />
+    </label>
+    <button type="submit">Save Email</button>
+  </form>
+  <div class="hint">
+    <p>Reports will be emailed to this address daily at 7 PM, weekly on Sundays, and monthly at month-end.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Preview Reports</h2>
+  <div class="button-row">
+    <a class="button-link" href="{{ url_for('preview_report', period='daily') }}">Daily Report</a>
+    <a class="button-link" href="{{ url_for('preview_report', period='weekly') }}">Weekly Report</a>
+    <a class="button-link" href="{{ url_for('preview_report', period='monthly') }}">Monthly Report</a>
+  </div>
+</section>
+{% endblock %}

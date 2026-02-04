@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card login-card">
+  <h2>Login</h2>
+  <p>Use the default admin credentials after initializing the database:</p>
+  <ul>
+    <li>Admin: <strong>admin / admin123</strong></li>
+    <li>Staff: <strong>staff / staff123</strong></li>
+  </ul>
+  <form method="post" class="form-grid">
+    <label>
+      Username
+      <input type="text" name="username" required />
+    </label>
+    <label>
+      Password
+      <input type="password" name="password" required />
+    </label>
+    <button type="submit">Sign in</button>
+  </form>
+</section>
+{% endblock %}

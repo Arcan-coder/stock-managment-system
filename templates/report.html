@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+  <h2>{{ period.title() }} Stock Summary</h2>
+  <p>Period: {{ report.start.strftime('%Y-%m-%d') }} to {{ report.end.strftime('%Y-%m-%d') }}</p>
+  <p>Total products: <strong>{{ report.total_products }}</strong></p>
+  <p>Sales total: <strong>${{ "%.2f" | format(report.sales_total) }}</strong></p>
+</section>
+
+<section class="card">
+  <h3>Low Stock Items</h3>
+  {% if report.low_stock %}
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Threshold</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in report.low_stock %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.low_stock_threshold }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No low stock items for this period.</p>
+  {% endif %}
+</section>
+{% endblock %}
