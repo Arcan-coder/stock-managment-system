@@ -14,6 +14,7 @@
         <p class="subtitle">Monitor stock health, suppliers, and automated reports.</p>
       </div>
       <div class="header-actions">
+        <span class="role-badge" id="roleBadge">Role: Admin</span>
         <button class="ghost dark">Download reports</button>
         <button class="primary">New stock update</button>
       </div>
@@ -32,22 +33,22 @@
       <section class="summary-grid">
         <div class="summary-card">
           <p class="label">Products tracked</p>
-          <p class="value">248</p>
+          <p class="value" id="statProducts">0</p>
           <p class="meta">12 added this week</p>
         </div>
         <div class="summary-card">
           <p class="label">Low-stock alerts</p>
-          <p class="value">17</p>
+          <p class="value" id="statLowStock">0</p>
           <p class="meta">4 critical items</p>
         </div>
         <div class="summary-card">
           <p class="label">Supplier orders</p>
-          <p class="value">9</p>
+          <p class="value" id="statSuppliers">0</p>
           <p class="meta">Next delivery tomorrow</p>
         </div>
         <div class="summary-card">
           <p class="label">Reports scheduled</p>
-          <p class="value">6</p>
+          <p class="value" id="statReports">0</p>
           <p class="meta">Daily + weekly summaries</p>
         </div>
       </section>
@@ -85,5 +86,6 @@
         </article>
       </section>
     </main>
+    <script src="/app.js"></script>
   </body>
 </html>

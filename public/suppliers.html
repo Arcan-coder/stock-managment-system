@@ -29,15 +29,31 @@
     </nav>
 
     <main class="content">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Supplier directory</h3>
+            <p>Maintain contact details and supplied products.</p>
+          </div>
+          <button class="ghost dark">Export</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Supplier</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Products supplied</th>
+              </tr>
+            </thead>
+            <tbody id="suppliersTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
       <section class="grid two-col">
-        <article class="panel">
-          <h3>Supplier directory</h3>
-          <ul class="timeline">
-            <li><span class="tag">Vecta Logistics</span> Packaging, cups, and lids.</li>
-            <li><span class="tag success">Greenleaf Farms</span> Organic beans and syrups.</li>
-            <li><span class="tag warning">Urban Ice Co.</span> Refrigerated deliveries.</li>
-          </ul>
-        </article>
         <article class="panel">
           <h3>Supplier profile fields</h3>
           <ul>
@@ -47,33 +63,38 @@
             <li>Lead time and rating</li>
           </ul>
         </article>
-      </section>
-
-      <section class="panel">
-        <h3>Performance insights</h3>
-        <div class="table">
-          <div class="table-row header">
-            <span>Supplier</span>
-            <span>Lead time</span>
-            <span>On-time delivery</span>
-          </div>
-          <div class="table-row">
-            <span>Vecta Logistics</span>
-            <span>3 days</span>
-            <span>97%</span>
-          </div>
-          <div class="table-row">
-            <span>Greenleaf Farms</span>
-            <span>5 days</span>
-            <span>92%</span>
-          </div>
-          <div class="table-row">
-            <span>Urban Ice Co.</span>
-            <span>2 days</span>
-            <span>88%</span>
-          </div>
-        </div>
+        <article class="panel">
+          <h3>Add supplier</h3>
+          <form class="form-grid" id="supplierForm">
+            <label>
+              <span>Supplier ID</span>
+              <input type="text" name="supplierId" placeholder="SUP-200" required />
+            </label>
+            <label>
+              <span>Name</span>
+              <input type="text" name="supplierName" required />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="text" name="phone" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span>Address</span>
+              <input type="text" name="address" required />
+            </label>
+            <label>
+              <span>Products supplied</span>
+              <input type="text" name="products" required />
+            </label>
+            <button class="primary" type="submit">Save supplier</button>
+          </form>
+        </article>
       </section>
     </main>
+    <script src="/app.js"></script>
   </body>
 </html>

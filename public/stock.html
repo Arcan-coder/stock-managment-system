@@ -31,13 +31,29 @@
     <main class="content">
       <section class="grid two-col">
         <article class="panel">
-          <h3>Recent stock movements</h3>
-          <ul class="timeline">
-            <li><span class="tag success">IN</span> 240 units of cold brew bottles added.</li>
-            <li><span class="tag warning">OUT</span> 32 espresso machines sold.</li>
-            <li><span class="tag">IN</span> 18 cartons of oat milk received.</li>
-            <li><span class="tag warning">OUT</span> 90 pastry boxes used.</li>
-          </ul>
+          <h3>Log stock movement</h3>
+          <form class="form-grid" id="transactionForm">
+            <label>
+              <span>Product ID</span>
+              <input type="text" name="productId" placeholder="PRD-001" required />
+            </label>
+            <label>
+              <span>Type</span>
+              <select name="type" required>
+                <option value="IN">IN</option>
+                <option value="OUT">OUT</option>
+              </select>
+            </label>
+            <label>
+              <span>Quantity</span>
+              <input type="number" name="quantity" required />
+            </label>
+            <label>
+              <span>Date</span>
+              <input type="date" name="date" required />
+            </label>
+            <button class="primary" type="submit">Save transaction</button>
+          </form>
         </article>
         <article class="panel">
           <h3>Automatic alerts</h3>
@@ -51,35 +67,29 @@
       </section>
 
       <section class="panel">
-        <h3>Stock control fields</h3>
-        <div class="table">
-          <div class="table-row header">
-            <span>Field</span>
-            <span>Details</span>
-            <span>Purpose</span>
+        <div class="panel-header">
+          <div>
+            <h3>Recent stock movements</h3>
+            <p>Updates appear after each stock in/out transaction.</p>
           </div>
-          <div class="table-row">
-            <span>Product ID</span>
-            <span>SKU / product reference</span>
-            <span>Links movement to product</span>
-          </div>
-          <div class="table-row">
-            <span>Type</span>
-            <span>IN or OUT</span>
-            <span>Delivery vs sale</span>
-          </div>
-          <div class="table-row">
-            <span>Quantity</span>
-            <span>Units moved</span>
-            <span>Updates available stock</span>
-          </div>
-          <div class="table-row">
-            <span>Date</span>
-            <span>Timestamp</span>
-            <span>Audit trail</span>
-          </div>
+          <button class="ghost dark">Export</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Product ID</th>
+                <th>Type</th>
+                <th>Quantity</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="transactionsTableBody"></tbody>
+          </table>
         </div>
       </section>
     </main>
+    <script src="/app.js"></script>
   </body>
 </html>

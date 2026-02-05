@@ -51,30 +51,27 @@
       </section>
 
       <section class="panel">
-        <h3>Reporting schedule</h3>
-        <div class="table">
-          <div class="table-row header">
-            <span>Report</span>
-            <span>Frequency</span>
-            <span>Recipients</span>
+        <div class="panel-header">
+          <div>
+            <h3>Report status</h3>
+            <p>Auto-generated based on stock and sales activity.</p>
           </div>
-          <div class="table-row">
-            <span>Daily stock levels</span>
-            <span>Daily · 8:00 AM</span>
-            <span>Admin, Storekeeper</span>
-          </div>
-          <div class="table-row">
-            <span>Sales performance</span>
-            <span>Weekly · Monday</span>
-            <span>Manager</span>
-          </div>
-          <div class="table-row">
-            <span>Supplier scorecard</span>
-            <span>Monthly · 1st</span>
-            <span>Admin, Manager</span>
-          </div>
+          <button class="ghost dark" id="refreshReports">Refresh</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Report</th>
+                <th>Status</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="reportsTableBody"></tbody>
+          </table>
         </div>
       </section>
     </main>
+    <script src="/app.js"></script>
   </body>
 </html>

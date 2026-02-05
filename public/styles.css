@@ -91,6 +91,21 @@ body {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.form-grid input,
+.form-grid select {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(82, 96, 129, 0.2);
+  padding: 0.7rem 0.85rem;
+  font-size: 0.95rem;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  outline: none;
+  border-color: rgba(43, 94, 167, 0.5);
+  box-shadow: 0 0 0 3px rgba(43, 94, 167, 0.12);
+}
+
 .auth-form input:focus {
   outline: none;
   border-color: rgba(43, 94, 167, 0.5);
@@ -353,6 +368,18 @@ button:hover {
   color: #526081;
 }
 
+.form-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.form-grid label {
+  display: grid;
+  gap: 0.4rem;
+  color: #526081;
+  font-size: 0.9rem;
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -402,6 +429,36 @@ button:hover {
   border-radius: 1rem;
   overflow: hidden;
   border: 1px solid rgba(82, 96, 129, 0.15);
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(82, 96, 129, 0.12);
+  font-size: 0.9rem;
+  color: #526081;
+}
+
+.data-table th {
+  font-weight: 700;
+  color: #1f2a44;
+  background: #f1f5fb;
+}
+
+.data-table tbody tr:hover {
+  background: #f8faff;
 }
 
 .table-row {
@@ -471,6 +528,16 @@ button:hover {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+.role-badge {
+  background: rgba(43, 94, 167, 0.12);
+  color: #2b5ea7;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid rgba(43, 94, 167, 0.2);
 }
 
 .app-nav {
