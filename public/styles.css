@@ -17,6 +17,34 @@ body {
   gap: 2.5rem;
 }
 
+.app-body {
+  background: #f4f6fb;
+}
+
+.dashboard-page {
+  background: linear-gradient(180deg, #eef2fb 0%, #f9fafc 40%, #ffffff 100%);
+}
+
+.products-page {
+  background: linear-gradient(180deg, #f1f8f4 0%, #f7fbf8 40%, #ffffff 100%);
+}
+
+.suppliers-page {
+  background: linear-gradient(180deg, #fdf6f1 0%, #fff9f5 40%, #ffffff 100%);
+}
+
+.stock-page {
+  background: linear-gradient(180deg, #f1f3ff 0%, #f7f8ff 40%, #ffffff 100%);
+}
+
+.reports-page {
+  background: linear-gradient(180deg, #f5f2ff 0%, #f8f6ff 40%, #ffffff 100%);
+}
+
+.users-page {
+  background: linear-gradient(180deg, #f1f6ff 0%, #f6f9ff 40%, #ffffff 100%);
+}
+
 .auth-body {
   background: radial-gradient(circle at top, #1f2a44, #121826);
 }
@@ -39,6 +67,10 @@ body {
   gap: 1.5rem;
 }
 
+.login-page .auth-card {
+  border: 1px solid rgba(246, 211, 101, 0.25);
+}
+
 .auth-form {
   display: grid;
   gap: 1rem;
@@ -56,6 +88,13 @@ body {
   border: 1px solid rgba(82, 96, 129, 0.2);
   padding: 0.75rem 0.9rem;
   font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: rgba(43, 94, 167, 0.5);
+  box-shadow: 0 0 0 3px rgba(43, 94, 167, 0.15);
 }
 
 .role-picker {
@@ -76,6 +115,12 @@ body {
   padding: 0.7rem 0.9rem;
   border: 1px solid rgba(82, 96, 129, 0.2);
   background: #f7f9fc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.role-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
 }
 
 .role-option input {
@@ -109,6 +154,10 @@ body {
   max-width: 360px;
   display: grid;
   gap: 1rem;
+}
+
+.auth-panel h2 {
+  margin: 0;
 }
 
 .mini-metrics {
@@ -203,6 +252,12 @@ button {
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
 }
 
 .primary {
@@ -285,6 +340,7 @@ button {
   display: grid;
   gap: 1rem;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.04);
 }
 
 .panel h3 {
@@ -357,6 +413,11 @@ button {
   border-bottom: 1px solid rgba(82, 96, 129, 0.12);
   font-size: 0.9rem;
   color: #526081;
+  transition: background 0.2s ease;
+}
+
+.table-row:hover {
+  background: #f8faff;
 }
 
 .table-row.header {
@@ -417,6 +478,12 @@ button {
   gap: 1rem;
   padding: 0 clamp(1.5rem, 4vw, 5rem);
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: rgba(244, 246, 251, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .app-nav a {
@@ -425,6 +492,7 @@ button {
   font-weight: 600;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid transparent;
+  transition: color 0.2s ease;
 }
 
 .app-nav a.active {
@@ -438,6 +506,7 @@ button {
   padding: 1.5rem;
   border-radius: 1.25rem;
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 .meta {
@@ -459,6 +528,7 @@ button {
   background: #f4f6fb;
   padding: 0.85rem 1rem;
   border-radius: 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 .tag {
