@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  background: #f4f6fb;
 }
 
 .app-body {
@@ -320,6 +321,9 @@ button:hover {
   padding: 0 clamp(1.5rem, 4vw, 5rem);
   display: grid;
   gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
 }
 
 .section-title {
@@ -356,6 +360,12 @@ button:hover {
   gap: 1rem;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
   border: 1px solid rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
 }
 
 .panel h3 {
@@ -378,6 +388,10 @@ button:hover {
   gap: 0.4rem;
   color: #526081;
   font-size: 0.9rem;
+}
+
+.form-grid button {
+  justify-self: start;
 }
 
 .grid {
@@ -461,6 +475,10 @@ button:hover {
   background: #f8faff;
 }
 
+.data-table tbody tr:nth-child(even) {
+  background: rgba(244, 246, 251, 0.6);
+}
+
 .table-row {
   display: grid;
   grid-template-columns: minmax(140px, 1fr) minmax(220px, 2fr) minmax(200px, 2fr);
@@ -518,6 +536,8 @@ button:hover {
   gap: 1.5rem;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .app-header h1 {
@@ -551,6 +571,10 @@ button:hover {
   backdrop-filter: blur(10px);
   z-index: 1;
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 999px;
+  padding-bottom: 0.75rem;
 }
 
 .app-nav a {
@@ -560,11 +584,14 @@ button:hover {
   padding-bottom: 0.5rem;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
 }
 
 .app-nav a.active {
   color: #2b5ea7;
   border-bottom-color: #2b5ea7;
+  background: rgba(43, 94, 167, 0.12);
 }
 
 .summary-card {
@@ -574,6 +601,18 @@ button:hover {
   border-radius: 1.25rem;
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
   border: 1px solid rgba(15, 23, 42, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -40% -20%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(43, 94, 167, 0.15), transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .meta {
