@@ -106,6 +106,32 @@ button {
   gap: 1.5rem;
 }
 
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-title h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pill {
+  background: #e4ecf8;
+  color: #2b5ea7;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
 .panel {
   background: #fff;
   border-radius: 1.25rem;
@@ -125,8 +151,110 @@ button {
   color: #526081;
 }
 
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.two-col {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.highlight {
+  border: 1px solid rgba(43, 94, 167, 0.2);
+  background: linear-gradient(145deg, #f6f9ff, #ffffff);
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.role {
+  margin: 0;
+  font-weight: 700;
+  color: #2b5ea7;
+}
+
+.role-desc {
+  margin: 0.35rem 0 0;
+  color: #526081;
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ghost.dark {
+  color: #2b5ea7;
+  border-color: rgba(43, 94, 167, 0.4);
+}
+
+.table {
+  display: grid;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(82, 96, 129, 0.15);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(220px, 2fr) minmax(200px, 2fr);
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid rgba(82, 96, 129, 0.12);
+  font-size: 0.9rem;
+  color: #526081;
+}
+
+.table-row.header {
+  background: #f1f5fb;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.automation {
+  background: #1f2a44;
+  color: #fff;
+}
+
+.automation p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.checklist {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.checklist label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+}
+
+.checklist input {
+  accent-color: #f6d365;
+}
+
 footer {
   text-align: center;
   padding: 0 1.5rem 2rem;
   color: #526081;
+}
+
+@media (max-width: 720px) {
+  .table-row {
+    grid-template-columns: 1fr;
+  }
 }

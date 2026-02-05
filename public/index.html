@@ -12,8 +12,8 @@
         <p class="eyebrow">Automated inventory & supplier management</p>
         <h1>Stock Management System</h1>
         <p class="subtitle">
-          A mobile-friendly MVP dashboard for tracking products, suppliers, and stock
-          levels while scheduling automated reports.
+          A complete, web-based hub to manage products, suppliers, stock movement,
+          automated reporting, and role-based access for growing businesses.
         </p>
         <div class="cta-row">
           <button class="primary">Launch Dashboard</button>
@@ -44,54 +44,163 @@
     </header>
 
     <main class="content">
-      <section class="panel">
+      <section class="section-title">
         <div>
-          <h3>Inventory status</h3>
+          <h2>Core modules</h2>
+          <p>Every part of the inventory lifecycle is covered in one connected workflow.</p>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Products</span>
+          <span class="pill">Suppliers</span>
+          <span class="pill">Stock Control</span>
+          <span class="pill">Reports</span>
+          <span class="pill">Users</span>
+        </div>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel">
+          <div>
+            <h3>Product management</h3>
+            <p>
+              Capture every item with SKU, pricing, supplier, and reorder thresholds so
+              your catalog stays accurate.
+            </p>
+          </div>
+          <ul>
+            <li>Add, update, delete, and view products</li>
+            <li>Track cost price, selling price, and profit margins</li>
+            <li>Automatic reorder level warnings</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div>
+            <h3>Supplier management</h3>
+            <p>
+              Build a single source of truth for supplier contacts, supplied products,
+              and performance insights.
+            </p>
+          </div>
+          <ul>
+            <li>Linked supplier profiles and contact channels</li>
+            <li>Quick access to supplied products</li>
+            <li>Supplier performance scorecards</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel">
+          <div>
+            <h3>Stock control</h3>
+            <p>
+              Increase or decrease quantities with every delivery and sale while keeping
+              a full audit trail.
+            </p>
+          </div>
+          <ul>
+            <li>Stock in/out movements with timestamps</li>
+            <li>Low-stock alerts and safety stock monitoring</li>
+            <li>Automatic quantity updates after sales</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div>
+            <h3>Automated reports</h3>
+            <p>
+              Generate daily, weekly, and monthly summaries that can be exported or sent
+              automatically via email.
+            </p>
+          </div>
+          <ul>
+            <li>Sales, stock, supplier, and low-stock reports</li>
+            <li>Downloadable CSV and PDF-ready views</li>
+            <li>Scheduled reporting calendar</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel highlight">
+        <div>
+          <h3>User roles & permissions</h3>
           <p>
-            Keep real-time visibility into your catalog with reorder alerts, batch
-            tracking, and supplier lead time insights.
+            Control access with admin, manager, and storekeeper roles, including activity
+            logging for accountability.
           </p>
         </div>
-        <ul>
-          <li>Reorder points & safety stock tracking</li>
-          <li>Batch & expiry monitoring</li>
-          <li>Multi-location stock snapshots</li>
-        </ul>
+        <div class="roles">
+          <div>
+            <p class="role">Admin</p>
+            <p class="role-desc">Full control over products, users, suppliers, and reports.</p>
+          </div>
+          <div>
+            <p class="role">Manager</p>
+            <p class="role-desc">View dashboards and download scheduled reports.</p>
+          </div>
+          <div>
+            <p class="role">Storekeeper</p>
+            <p class="role-desc">Update stock movements and receive alerts.</p>
+          </div>
+        </div>
       </section>
 
       <section class="panel">
-        <div>
-          <h3>Supplier relationships</h3>
-          <p>
-            Centralize supplier profiles, contact details, and performance metrics
-            so every purchase order stays on schedule.
-          </p>
+        <div class="panel-header">
+          <div>
+            <h3>Database blueprint</h3>
+            <p>Core tables that support the MVP and scale for future automation.</p>
+          </div>
+          <button class="ghost dark">Download schema</button>
         </div>
-        <ul>
-          <li>Supplier scorecards</li>
-          <li>Automated PO reminders</li>
-          <li>Lead time analytics</li>
-        </ul>
+        <div class="table">
+          <div class="table-row header">
+            <span>Table</span>
+            <span>Key fields</span>
+            <span>Purpose</span>
+          </div>
+          <div class="table-row">
+            <span>Products</span>
+            <span>ID, name, description, cost, price, quantity, supplier_id</span>
+            <span>Tracks every inventory item.</span>
+          </div>
+          <div class="table-row">
+            <span>Suppliers</span>
+            <span>ID, name, phone, email, address</span>
+            <span>Stores supplier profiles and contacts.</span>
+          </div>
+          <div class="table-row">
+            <span>Users</span>
+            <span>ID, username, password, role</span>
+            <span>Manages access and permissions.</span>
+          </div>
+          <div class="table-row">
+            <span>Stock Transactions</span>
+            <span>ID, product_id, type, quantity, date</span>
+            <span>Logs every stock movement.</span>
+          </div>
+        </div>
       </section>
 
-      <section class="panel">
+      <section class="panel automation">
         <div>
-          <h3>Automated reporting</h3>
-          <p>
-            Schedule daily, weekly, or monthly updates and deliver them to the right
-            teams automatically.
-          </p>
+          <h3>Automation checklist</h3>
+          <p>Every workflow that runs in the background to keep inventory healthy.</p>
         </div>
-        <ul>
-          <li>Email-ready summaries</li>
-          <li>Role-based dashboards</li>
-          <li>Exportable CSV snapshots</li>
-        </ul>
+        <div class="checklist">
+          <label><input type="checkbox" checked /> Low-stock alerts</label>
+          <label><input type="checkbox" checked /> Scheduled report emails</label>
+          <label><input type="checkbox" checked /> Activity log tracking</label>
+          <label><input type="checkbox" checked /> Automatic quantity updates</label>
+          <label><input type="checkbox" /> AI demand prediction (future)</label>
+          <label><input type="checkbox" /> POS integrations (future)</label>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>Ready to start? Connect your inventory and launch in minutes.</p>
+      <p>Ready to start? Connect your inventory, invite your team, and go live in minutes.</p>
     </footer>
   </body>
 </html>
