@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Stock Control</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Stock control</p>
+        <h1>Stock in & out</h1>
+        <p class="subtitle">Record deliveries, sales, and automatic quantity updates.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Log stock out</button>
+        <button class="primary">Log stock in</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a class="active" href="/stock.html">Stock</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Recent stock movements</h3>
+          <ul class="timeline">
+            <li><span class="tag success">IN</span> 240 units of cold brew bottles added.</li>
+            <li><span class="tag warning">OUT</span> 32 espresso machines sold.</li>
+            <li><span class="tag">IN</span> 18 cartons of oat milk received.</li>
+            <li><span class="tag warning">OUT</span> 90 pastry boxes used.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Automatic alerts</h3>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Low-stock notifications</label>
+            <label><input type="checkbox" checked /> Stock update logs</label>
+            <label><input type="checkbox" checked /> Threshold-based reorder tasks</label>
+            <label><input type="checkbox" /> Multi-location transfers (future)</label>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h3>Stock control fields</h3>
+        <div class="table">
+          <div class="table-row header">
+            <span>Field</span>
+            <span>Details</span>
+            <span>Purpose</span>
+          </div>
+          <div class="table-row">
+            <span>Product ID</span>
+            <span>SKU / product reference</span>
+            <span>Links movement to product</span>
+          </div>
+          <div class="table-row">
+            <span>Type</span>
+            <span>IN or OUT</span>
+            <span>Delivery vs sale</span>
+          </div>
+          <div class="table-row">
+            <span>Quantity</span>
+            <span>Units moved</span>
+            <span>Updates available stock</span>
+          </div>
+          <div class="table-row">
+            <span>Date</span>
+            <span>Timestamp</span>
+            <span>Audit trail</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

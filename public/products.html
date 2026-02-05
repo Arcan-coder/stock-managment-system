@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Products</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Products</p>
+        <h1>Product management</h1>
+        <p class="subtitle">Create, update, and monitor every product in your catalog.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Import CSV</button>
+        <button class="primary">Add product</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a class="active" href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a href="/stock.html">Stock</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Product list</h3>
+            <p>Track pricing, suppliers, and stock thresholds.</p>
+          </div>
+          <button class="ghost dark">Export</button>
+        </div>
+        <div class="table">
+          <div class="table-row header">
+            <span>Product</span>
+            <span>Pricing</span>
+            <span>Stock status</span>
+          </div>
+          <div class="table-row">
+            <span>Arabica Beans</span>
+            <span>$18.00 cost / $28.00 price</span>
+            <span>120 in stock · Reorder at 30</span>
+          </div>
+          <div class="table-row">
+            <span>Cold Brew Bottles</span>
+            <span>$1.20 cost / $3.50 price</span>
+            <span>45 in stock · Reorder at 40</span>
+          </div>
+          <div class="table-row">
+            <span>Compostable Cups</span>
+            <span>$0.18 cost / $0.75 price</span>
+            <span>610 in stock · Reorder at 200</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Product details</h3>
+          <ul>
+            <li>Product ID, name, and description</li>
+            <li>Supplier link and category</li>
+            <li>Cost price, selling price, and margin</li>
+            <li>Quantity on hand and reorder level</li>
+            <li>Date added and last updated</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Quick actions</h3>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Bulk update pricing</label>
+            <label><input type="checkbox" checked /> Update reorder levels</label>
+            <label><input type="checkbox" checked /> Add new product</label>
+            <label><input type="checkbox" /> Archive discontinued items</label>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Reports</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Reports</p>
+        <h1>Automated reporting</h1>
+        <p class="subtitle">Generate daily, weekly, and monthly insights automatically.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Email report</button>
+        <button class="primary">Generate report</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a href="/stock.html">Stock</a>
+      <a class="active" href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Report library</h3>
+          <ul>
+            <li>Daily stock report</li>
+            <li>Sales performance report</li>
+            <li>Low-stock alert summary</li>
+            <li>Supplier performance report</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Delivery options</h3>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Email to managers</label>
+            <label><input type="checkbox" checked /> Download as CSV</label>
+            <label><input type="checkbox" checked /> Scheduled monthly digest</label>
+            <label><input type="checkbox" /> Slack notifications (future)</label>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h3>Reporting schedule</h3>
+        <div class="table">
+          <div class="table-row header">
+            <span>Report</span>
+            <span>Frequency</span>
+            <span>Recipients</span>
+          </div>
+          <div class="table-row">
+            <span>Daily stock levels</span>
+            <span>Daily · 8:00 AM</span>
+            <span>Admin, Storekeeper</span>
+          </div>
+          <div class="table-row">
+            <span>Sales performance</span>
+            <span>Weekly · Monday</span>
+            <span>Manager</span>
+          </div>
+          <div class="table-row">
+            <span>Supplier scorecard</span>
+            <span>Monthly · 1st</span>
+            <span>Admin, Manager</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

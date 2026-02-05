@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Users</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Users</p>
+        <h1>User roles & access</h1>
+        <p class="subtitle">Assign permissions and track activity across the team.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Download log</button>
+        <button class="primary">Invite user</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a href="/stock.html">Stock</a>
+      <a href="/reports.html">Reports</a>
+      <a class="active" href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Roles & permissions</h3>
+          <div class="roles">
+            <div>
+              <p class="role">Admin</p>
+              <p class="role-desc">Full control across inventory, users, suppliers, and reports.</p>
+            </div>
+            <div>
+              <p class="role">Manager</p>
+              <p class="role-desc">View dashboards, run reports, and approve reorder plans.</p>
+            </div>
+            <div>
+              <p class="role">Storekeeper</p>
+              <p class="role-desc">Update stock movements and receive low-stock alerts.</p>
+            </div>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>Security checklist</h3>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Password encryption</label>
+            <label><input type="checkbox" checked /> Activity logs</label>
+            <label><input type="checkbox" checked /> Role-based access</label>
+            <label><input type="checkbox" /> Two-factor authentication (future)</label>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h3>Active users</h3>
+        <div class="table">
+          <div class="table-row header">
+            <span>User</span>
+            <span>Role</span>
+            <span>Status</span>
+          </div>
+          <div class="table-row">
+            <span>Rita Mensah</span>
+            <span>Admin</span>
+            <span>Online</span>
+          </div>
+          <div class="table-row">
+            <span>Samuel Otieno</span>
+            <span>Manager</span>
+            <span>In review</span>
+          </div>
+          <div class="table-row">
+            <span>Grace Ncube</span>
+            <span>Storekeeper</span>
+            <span>Active</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
