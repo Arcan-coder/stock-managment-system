@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Reports</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="app-body reports-page">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Reports</p>
+        <h1>Automated reporting</h1>
+        <p class="subtitle">Generate daily, weekly, and monthly insights automatically.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Email report</button>
+        <button class="primary">Generate report</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a href="/stock.html">Stock</a>
+      <a class="active" href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Report library</h3>
+          <ul>
+            <li>Daily stock report</li>
+            <li>Sales performance report</li>
+            <li>Low-stock alert summary</li>
+            <li>Supplier performance report</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Delivery options</h3>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Email to managers</label>
+            <label><input type="checkbox" checked /> Download as CSV</label>
+            <label><input type="checkbox" checked /> Scheduled monthly digest</label>
+            <label><input type="checkbox" /> Slack notifications (future)</label>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Report status</h3>
+            <p>Auto-generated based on stock and sales activity.</p>
+          </div>
+          <button class="ghost dark" id="refreshReports">Refresh</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Report</th>
+                <th>Status</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="reportsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

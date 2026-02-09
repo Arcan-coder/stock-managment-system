@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Stock Control</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="app-body stock-page">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Stock control</p>
+        <h1>Stock in & out</h1>
+        <p class="subtitle">Record deliveries, sales, and automatic quantity updates.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Log stock out</button>
+        <button class="primary">Log stock in</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a class="active" href="/stock.html">Stock</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Log stock movement</h3>
+          <form class="form-grid" id="transactionForm">
+            <label>
+              <span>Product ID</span>
+              <input type="text" name="productId" placeholder="PRD-001" required />
+            </label>
+            <label>
+              <span>Type</span>
+              <select name="type" required>
+                <option value="IN">IN</option>
+                <option value="OUT">OUT</option>
+              </select>
+            </label>
+            <label>
+              <span>Quantity</span>
+              <input type="number" name="quantity" required />
+            </label>
+            <label>
+              <span>Date</span>
+              <input type="date" name="date" required />
+            </label>
+            <button class="primary" type="submit">Save transaction</button>
+          </form>
+        </article>
+        <article class="panel">
+          <h3>Automatic alerts</h3>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Low-stock notifications</label>
+            <label><input type="checkbox" checked /> Stock update logs</label>
+            <label><input type="checkbox" checked /> Threshold-based reorder tasks</label>
+            <label><input type="checkbox" /> Multi-location transfers (future)</label>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Recent stock movements</h3>
+            <p>Updates appear after each stock in/out transaction.</p>
+          </div>
+          <button class="ghost dark">Export</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Product ID</th>
+                <th>Type</th>
+                <th>Quantity</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="transactionsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Login</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="auth-body login-page">
+    <main class="auth">
+      <section class="auth-card">
+        <div>
+          <p class="eyebrow">Welcome back</p>
+          <h1>Stock Management System</h1>
+          <p class="subtitle">
+            Log in to access inventory, suppliers, stock movements, and reports. Choose
+            your role to tailor the dashboard.
+          </p>
+        </div>
+
+        <form class="auth-form" id="loginForm">
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" placeholder="you@company.com" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" placeholder="••••••••" required />
+          </label>
+
+          <div class="role-picker">
+            <p class="label">Select role</p>
+            <div class="role-grid">
+              <label class="role-option">
+                <input type="radio" name="role" value="admin" checked />
+                <span>
+                  <strong>Admin</strong>
+                  <small>Full control</small>
+                </span>
+              </label>
+              <label class="role-option">
+                <input type="radio" name="role" value="manager" />
+                <span>
+                  <strong>Manager</strong>
+                  <small>Reports + view</small>
+                </span>
+              </label>
+              <label class="role-option">
+                <input type="radio" name="role" value="storekeeper" />
+                <span>
+                  <strong>Storekeeper</strong>
+                  <small>Stock updates</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <button class="primary" type="submit">Log in</button>
+            <button class="ghost dark" type="button">Register admin</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="auth-visual" aria-hidden="true">
+        <div class="orb"></div>
+        <div class="orb secondary"></div>
+        <div class="auth-panel">
+          <p class="label">Live system status</p>
+          <h2>Inventory automation</h2>
+          <p>
+            Low-stock alerts, supplier orders, and scheduled reports are ready to deploy
+            after login.
+          </p>
+          <div class="mini-metrics">
+            <div>
+              <p class="value">98%</p>
+              <p class="label">On-time orders</p>
+            </div>
+            <div>
+              <p class="value">24</p>
+              <p class="label">Pending restocks</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="login-overlay" id="loginOverlay" aria-hidden="true">
+      <div class="pulse">
+        <span>Signing you in...</span>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

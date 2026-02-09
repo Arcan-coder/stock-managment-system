@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="app-body dashboard-page">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Dashboard</p>
+        <h1>Inventory overview</h1>
+        <p class="subtitle">Monitor stock health, suppliers, and automated reports.</p>
+      </div>
+      <div class="header-actions">
+        <span class="role-badge" id="roleBadge">Role: Admin</span>
+        <button class="ghost dark">Download reports</button>
+        <button class="primary">New stock update</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a class="active" href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a href="/stock.html">Stock</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="summary-grid">
+        <div class="summary-card">
+          <p class="label">Products tracked</p>
+          <p class="value" id="statProducts">0</p>
+          <p class="meta">12 added this week</p>
+        </div>
+        <div class="summary-card">
+          <p class="label">Low-stock alerts</p>
+          <p class="value" id="statLowStock">0</p>
+          <p class="meta">4 critical items</p>
+        </div>
+        <div class="summary-card">
+          <p class="label">Supplier orders</p>
+          <p class="value" id="statSuppliers">0</p>
+          <p class="meta">Next delivery tomorrow</p>
+        </div>
+        <div class="summary-card">
+          <p class="label">Reports scheduled</p>
+          <p class="value" id="statReports">0</p>
+          <p class="meta">Daily + weekly summaries</p>
+        </div>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Activity feed</h3>
+          <ul class="timeline">
+            <li>
+              <span class="tag warning">Low stock</span>
+              Arabica beans reached reorder level (15 units).
+            </li>
+            <li>
+              <span class="tag">Report sent</span>
+              Weekly supplier performance delivered to managers.
+            </li>
+            <li>
+              <span class="tag success">Stock in</span>
+              200 units of packaging received from Vecta Logistics.
+            </li>
+            <li>
+              <span class="tag">User access</span>
+              New storekeeper account created for Lakeside branch.
+            </li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Upcoming automation</h3>
+          <div class="checklist">
+            <label><input type="checkbox" checked /> Daily stock report (8:00 AM)</label>
+            <label><input type="checkbox" checked /> Low-stock alerts (real-time)</label>
+            <label><input type="checkbox" checked /> Supplier scorecards (Fridays)</label>
+            <label><input type="checkbox" /> Sales forecast (future)</label>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

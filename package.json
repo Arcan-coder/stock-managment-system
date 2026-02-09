@@ -1,0 +1,9 @@
+{
+  "name": "stock-managment-system",
+  "version": "1.0.0",
+  "description": "Automated Inventory & Supplier Management System MVP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

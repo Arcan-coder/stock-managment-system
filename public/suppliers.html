@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Suppliers</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="app-body suppliers-page">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Suppliers</p>
+        <h1>Supplier management</h1>
+        <p class="subtitle">Centralize supplier data, contacts, and supplied products.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Email suppliers</button>
+        <button class="primary">Add supplier</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a class="active" href="/suppliers.html">Suppliers</a>
+      <a href="/stock.html">Stock</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Supplier directory</h3>
+            <p>Maintain contact details and supplied products.</p>
+          </div>
+          <button class="ghost dark">Export</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Supplier</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Products supplied</th>
+              </tr>
+            </thead>
+            <tbody id="suppliersTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Supplier profile fields</h3>
+          <ul>
+            <li>Supplier ID, name, phone, email</li>
+            <li>Address and service region</li>
+            <li>Products supplied</li>
+            <li>Lead time and rating</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Add supplier</h3>
+          <form class="form-grid" id="supplierForm">
+            <label>
+              <span>Supplier ID</span>
+              <input type="text" name="supplierId" placeholder="SUP-200" required />
+            </label>
+            <label>
+              <span>Name</span>
+              <input type="text" name="supplierName" required />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="text" name="phone" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span>Address</span>
+              <input type="text" name="address" required />
+            </label>
+            <label>
+              <span>Products supplied</span>
+              <input type="text" name="products" required />
+            </label>
+            <button class="primary" type="submit">Save supplier</button>
+          </form>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Management System | Users</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="app-body users-page">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Users</p>
+        <h1>User roles & access</h1>
+        <p class="subtitle">Assign permissions and track activity across the team.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost dark">Download log</button>
+        <button class="primary">Invite user</button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/products.html">Products</a>
+      <a href="/suppliers.html">Suppliers</a>
+      <a href="/stock.html">Stock</a>
+      <a href="/reports.html">Reports</a>
+      <a class="active" href="/users.html">Users</a>
+    </nav>
+
+    <main class="content">
+      <section class="grid two-col">
+        <article class="panel">
+          <h3>Roles & permissions</h3>
+          <div class="roles">
+            <div>
+              <p class="role">Admin</p>
+              <p class="role-desc">Full control across inventory, users, suppliers, and reports.</p>
+            </div>
+            <div>
+              <p class="role">Manager</p>
+              <p class="role-desc">View dashboards, run reports, and approve reorder plans.</p>
+            </div>
+            <div>
+              <p class="role">Storekeeper</p>
+              <p class="role-desc">Update stock movements and receive low-stock alerts.</p>
+            </div>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>Add user</h3>
+          <form class="form-grid" id="userForm">
+            <label>
+              <span>User ID</span>
+              <input type="text" name="userId" placeholder="USR-100" required />
+            </label>
+            <label>
+              <span>Name</span>
+              <input type="text" name="userName" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="userEmail" required />
+            </label>
+            <label>
+              <span>Role</span>
+              <select name="userRole" required>
+                <option value="Admin">Admin</option>
+                <option value="Manager">Manager</option>
+                <option value="Storekeeper">Storekeeper</option>
+              </select>
+            </label>
+            <button class="primary" type="submit">Invite user</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Active users</h3>
+            <p>Role-based access with activity logs.</p>
+          </div>
+          <button class="ghost dark">Export</button>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
