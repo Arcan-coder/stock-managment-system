@@ -1,0 +1,18 @@
+MARKS PERFORMANCE SUMMARY
+
+Subject performance (avg vs target):
+- Biology: 60.5% vs target 70.0% (-9.5%), trend: steady
+- Chemistry: 56.5% vs target 82.0% (-25.5%), trend: improving
+- English: 76.5% vs target 80.0% (-3.5%), trend: declining
+- Math: 72.0% vs target 85.0% (-13.0%), trend: improving
+
+Priority focus subjects:
+- Chemistry: improve Quiz (gap 25.5%)
+- Math: improve Exam (gap 13.0%)
+- Biology: improve Exam (gap 9.5%)
+
+Strongest subjects:
+- English: keep momentum (-3.5% vs target)
+- Biology: keep momentum (-9.5% vs target)
+
+Weekly action formula: 5 sessions/week (1 hour each) for lowest-gap subjects.
