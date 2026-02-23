@@ -1,0 +1,13 @@
+Subject,Assessment Type,Date,Score,Total,Weight
+Math,Quiz,2026-01-08,14,20,0.2
+Math,Assignment,2026-01-15,32,40,0.3
+Math,Exam,2026-01-22,68,100,0.5
+Biology,Quiz,2026-01-09,12,20,0.2
+Biology,Assignment,2026-01-16,26,40,0.3
+Biology,Exam,2026-01-23,58,100,0.5
+English,Quiz,2026-01-10,16,20,0.2
+English,Assignment,2026-01-17,30,40,0.3
+English,Exam,2026-01-24,76,100,0.5
+Chemistry,Quiz,2026-01-11,10,20,0.2
+Chemistry,Assignment,2026-01-18,22,40,0.3
+Chemistry,Exam,2026-01-25,60,100,0.5
